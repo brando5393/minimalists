@@ -1,8 +1,15 @@
-
-div form{
-    text-align: center;
-}
-
 button{
     margin-left: 5px;
+}
+
+button:hover{
+    color: #00ACEA !important;
+}
+
+div{
+    text-align: center !important;
+}
+
+form{
+    display: inline-block !important;
 }

@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
 import './styles.css'
-import TodoList from '../todo-list/TodoList';
+// import TodoList from '../todo-list/TodoList';
 
 class TodoForm extends Component {
     constructor(props){
         super(props);
-        this.state ={userImput: ""};
+        this.state ={
+            userImput: "",
+            todos: []
+    };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,11 +22,15 @@ class TodoForm extends Component {
             handleSubmit(event){
                 event.preventDefault();
                 console.log(this.state)
-                if(this.state.userImput !== "" || null){
-                    TodoList.push(this.state.userImput);
+                if(this.state.userImput !== ""){
+                    this.state.todos.push(this.state.userImput);
+                    // console.log(this.state.todos);
+                    this.setState({userImput: ""});
+                    document.getElementById("add-todo").value="";
+
     
                 }else{
-                    alert("Sorry but you can't submit a blank todo.");
+                    return alert("Sorry but you can't submit a blank todo.");
                 }
             }
 
@@ -31,10 +38,10 @@ class TodoForm extends Component {
     render() {
         return (
             <div>
-                <form className="form-inline" onSubmit={this.handleSubmit}>
+                <form className="form-inline align-middle text-center" onSubmit={this.handleSubmit}>
                     <div className="form-group">
-                        <input type="text" placeholder="Enter a todo" name="add-todo" className="form-control" onChange={this.handleChange}/>
-                        <button type="submit" className="btn btn-info">Add Item</button>
+                        <input type="text" placeholder="Enter a todo" name="add-todo" className="form-control" id="add-todo" onChange={this.handleChange}/>
+                        <button type="submit" className="btn btn-primary">Add Item</button>
                     </div>
                 </form>
             </div>
