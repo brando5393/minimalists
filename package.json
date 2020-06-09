@@ -1,0 +1,27 @@
+{
+  "name": "minimalists",
+  "version": "1.0.0",
+  "description": "A simple, clean minimalist todo app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brando5393/minimalists.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brando5393/minimalists/issues"
+  },
+  "homepage": "https://github.com/brando5393/minimalists#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.9.18"
+  }
+}
