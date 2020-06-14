@@ -1,13 +1,11 @@
 import React, { Component } from 'react'
 import './styles.css'
-// import TodoList from '../todo-list/TodoList';
 
 class TodoForm extends Component {
     constructor(props){
         super(props);
         this.state ={
-            userImput: "",
-            todos: []
+            userImput: ""
     };
 
         this.handleChange = this.handleChange.bind(this);
@@ -21,10 +19,9 @@ class TodoForm extends Component {
     
             handleSubmit(event){
                 event.preventDefault();
-                console.log(this.state)
+                // console.log(this.state)
                 if(this.state.userImput !== ""){
-                    this.state.todos.push(this.state.userImput);
-                    // console.log(this.state.todos);
+                    this.props.getToDo(this.state.userImput)
                     this.setState({userImput: ""});
                     document.getElementById("add-todo").value="";
 
