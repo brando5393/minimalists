@@ -102,3 +102,7 @@ dist
 
 # TernJS port file
 .tern-port
+
+
+# todo list file
+todoList.txt

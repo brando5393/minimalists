@@ -21,7 +21,7 @@ class TodoForm extends Component {
                 event.preventDefault();
                 // console.log(this.state)
                 if(this.state.userImput !== ""){
-                    this.props.getToDo(this.state.userImput)
+                    this.props.getToDo(this.state.userImput);
                     this.setState({userImput: ""});
                     document.getElementById("add-todo").value="";
 

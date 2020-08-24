@@ -4,16 +4,19 @@ import TodoForm from '../todo-form/TodoForm'
 import AppHeader from '../app-header/AppHeader'
 import './styles.css'
 
-
-
- const getToDo = todo =>{
-     this.state.todos.push(todo);
- }
  
  class TodoList extends Component {
     state={
         todos: []
     };
+
+
+    getToDo = (todo) =>{
+        this.state.todos.push(todo);
+    }
+
+    
+
     render() {
         return (
             <div className="container">
@@ -26,13 +29,14 @@ import './styles.css'
                     <div className="col col-lg-12">
                         <h3>My To-dos</h3>
                         <br/>
-                        {this.state.todos.map((todo) => <TodoItem todoText = {todo} />)}
+                        {/* {this.state.todos.map((todo) => <TodoItem todoText = {todo} />)} */}
+                        <TodoItem todoText="hello world" />
 
                     </div>
                 </div>
                 <div className="row">
                     <div className="col col-lg-12">
-                        <TodoForm data = {{todoList: this.state.todos, gettodo: getToDo}} />
+                        <TodoForm data = {this.getToDo} />
                     </div>
                 </div>
             </div>
