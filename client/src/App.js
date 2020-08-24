@@ -1,14 +1,25 @@
-import React from 'react';
+
+import React, { Component } from 'react'
 import logo from './logo.svg';
 import TodoList from './components/todo-list/TodoList'
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <TodoList />
-    </div>
-  );
+
+class App extends Component {
+  
+  // setup state here
+  state = { 
+    todos: [] 
+  }
+
+  render() {
+    return (
+      <div>
+        <TodoList />
+      </div>
+    )
+  }
 }
+
 
 export default App;

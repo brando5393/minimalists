@@ -6,17 +6,7 @@ import './styles.css'
 
  
  class TodoList extends Component {
-    state={
-        todos: []
-    };
-
-
-    getToDo = (todo) =>{
-        this.state.todos.push(todo);
-    }
-
-    
-
+ 
     render() {
         return (
             <div className="container">
