@@ -6,11 +6,6 @@ import './App.css';
 
 
 class App extends Component {
-  
-  // setup state here
-  state = { 
-    todos: [] 
-  }
 
   render() {
     return (

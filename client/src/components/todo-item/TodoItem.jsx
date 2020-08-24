@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { Component } from 'react'
 import './styles.css'
 
-const TodoItem = (props) => {
-    return (
+export class TodoItem extends Component {
+    render() {
+        return (
         <div className="form-group form-check">
             <input className="form-check-input" type="checkbox"/>
-            <label className="form-check-label">{props.todoText}</label>
+            <label className="form-check-label">{this.props.todoText}</label>
         </div>
-    )
+        )
+    }
 }
 
 export default TodoItem

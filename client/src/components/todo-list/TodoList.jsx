@@ -6,7 +6,10 @@ import './styles.css'
 
  
  class TodoList extends Component {
- 
+    // setup state here
+    state = { 
+        todos: ["water plants", "buy food", "walk cat"]
+    }
     render() {
         return (
             <div className="container">
@@ -18,15 +21,14 @@ import './styles.css'
                 <div className="row">
                     <div className="col col-lg-12">
                         <h3>My To-dos</h3>
-                        <br/>
-                        {/* {this.state.todos.map((todo) => <TodoItem todoText = {todo} />)} */}
-                        <TodoItem todoText="hello world" />
+                        {/* Render all todoitems here */}
+                        {this.state.todos.map((todo) => <TodoItem todoText = {todo} />)}
 
                     </div>
                 </div>
                 <div className="row">
                     <div className="col col-lg-12">
-                        <TodoForm data = {this.getToDo} />
+                        <TodoForm />
                     </div>
                 </div>
             </div>
