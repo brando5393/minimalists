@@ -22,7 +22,7 @@ class TodoForm extends Component {
                 // console.log(this.state)
                 if(this.state.userInput !== ""){
                     console.log(this.state.userInput);
-                   this.props.addTodo(this.state.userInput);
+                   this.props.addTodo(this.state.userInput.trim());
                    this.setState({userInput: ""});
 
     
