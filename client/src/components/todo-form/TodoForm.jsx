@@ -1,43 +1,12 @@
-import React, { Component } from "react";
-import { v4 as uuidv4 } from "uuid";
-import "./styles.css";
+import React from "react";
 
-class TodoForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      userInput: "",
-      alertBlankTodo: false,
-    };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  // showAlert() {
-  //   this.setState({ alertBlankTodo: true });
-  // }
-
-  handleChange(event) {
-    this.setState({ userInput: event.target.value });
-  }
-
-  handleSubmit(event) {
-    event.preventDefault();
-    if (this.state.userInput !== "") {
-      this.props.addTodo(this.state.userInput.toLowerCase().trim(), uuidv4());
-      this.setState({ userInput: "" });
-    } else {
-      // showAlert();
-    }
-  }
-
-  render() {
-    return (
+const TodoForm = (props) => {
+  return (
+    <div>
       <div>
         <form
           className="form-inline align-middle text-center"
-          onSubmit={this.handleSubmit}
+          onSubmit={props.handleSubmit}
         >
           <div className="form-group">
             <input
@@ -46,8 +15,8 @@ class TodoForm extends Component {
               name="add-todo"
               className="form-control"
               id="add-todo"
-              value={this.state.userInput}
-              onChange={this.handleChange}
+              value={props.value}
+              onChange={props.handleChange}
             />
             <button type="submit" className="btn btn-primary">
               Add Item
@@ -55,7 +24,8 @@ class TodoForm extends Component {
           </div>
         </form>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
+
 export default TodoForm;

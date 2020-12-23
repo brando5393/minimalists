@@ -12,3 +12,26 @@ h3 {
   border: 5px double grey;
   box-shadow: 5px 10px;
 }
+
+button {
+  margin-left: 5px;
+}
+
+button:hover {
+  color: #00acea !important;
+}
+
+div {
+  text-align: center !important;
+}
+
+form {
+  display: inline-block !important;
+}
+
+img {
+  width: 150px;
+  height: auto;
+  margin-bottom: 5px;
+  /* border-radius: 50%; */
+}

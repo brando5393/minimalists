@@ -2,22 +2,40 @@ import React, { useState } from "react";
 import TodoItem from "./components/todo-item/TodoItem";
 import TodoForm from "./components/todo-form/TodoForm";
 import AppHeader from "./components/app-header/AppHeader";
+import { v4 as uuidv4 } from "uuid";
 
 const App = (props) => {
   const [state, setState] = useState({
     todos: [],
+    userInput: "",
     showAlert: false,
   });
+
+  handleChange = (event) => {
+    setState({
+      ...state,
+      userInput: event.target.value.toLowerCase(),
+    });
+  };
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    state.userInput !== ""
+      ? setState(
+          ...state,
+          state.todos.push({ id: uuidv4(), text: state.userInput })
+        )
+      : setState({ ...state, showAlert: true });
+    setState({
+      ...state,
+      userInput: "",
+    });
+  };
 
   removeItem = (event) => {
     // search through this.state.todos and find item that corresponds to clicked item
   };
 
-  addItem = (todoText, todoId) => {
-    this.setState({
-      todos: [...state.todos, { id: todoId, text: todoText }],
-    });
-  };
   return (
     <div className="container">
       <div className="row">
@@ -39,7 +57,11 @@ const App = (props) => {
       </div>
       <div className="row">
         <div className="col col-lg-12">
-          <TodoForm addTodo={addItem} />
+          <TodoForm
+            handleSubmit={handleSubmit}
+            handleChange={handleChange}
+            value={state.userInput}
+          />
         </div>
       </div>
     </div>
