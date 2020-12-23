@@ -32,7 +32,7 @@ const App = (props) => {
     });
   };
 
-  removeItem = (event) => {
+  removeItem = (todo, id) => {
     // search through this.state.todos and find item that corresponds to clicked item
   };
 
@@ -47,11 +47,7 @@ const App = (props) => {
         <div className="col col-lg-12">
           <h3>My To-dos</h3>
           {state.todos.map((todo) => (
-            <TodoItem
-              key={todo.id}
-              todoText={todo.text}
-              removeItem={removeItem}
-            />
+            <TodoItem key={todo.id} text={todo.text} onchecked={removeItem} />
           ))}
         </div>
       </div>

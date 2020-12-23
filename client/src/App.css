@@ -35,3 +35,8 @@ img {
   margin-bottom: 5px;
   /* border-radius: 50%; */
 }
+
+label {
+  font-weight: bold;
+  display: inline !important;
+}
