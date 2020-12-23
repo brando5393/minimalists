@@ -32,7 +32,6 @@ const App = (props) => {
         ...state,
         showAlert: true,
       });
-      alert("no");
     }
   };
 
