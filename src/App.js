@@ -3,6 +3,7 @@ import TodoItem from "./components/todo-item/TodoItem";
 import TodoForm from "./components/todo-form/TodoForm";
 import AppHeader from "./components/app-header/AppHeader";
 import { v4 as uuidv4 } from "uuid";
+import "./App.css";
 
 const App = (props) => {
   const [state, setState] = useState({
@@ -11,28 +12,31 @@ const App = (props) => {
     showAlert: false,
   });
 
-  handleChange = (event) => {
+  const handleChange = (event) => {
     setState({
       ...state,
       userInput: event.target.value.toLowerCase(),
     });
   };
 
-  handleSubmit = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    state.userInput !== ""
-      ? setState(
-          ...state,
-          state.todos.push({ id: uuidv4(), text: state.userInput })
-        )
-      : setState({ ...state, showAlert: true });
-    setState({
-      ...state,
-      userInput: "",
-    });
+    if (state.userInput !== "") {
+      setState({
+        ...state,
+        todos: [...state.todos, { id: uuidv4(), text: state.userInput }],
+        userInput: "",
+      });
+    } else {
+      setState({
+        ...state,
+        showAlert: true,
+      });
+      alert("no");
+    }
   };
 
-  removeItem = (todo, id) => {
+  const removeItem = (todo, id) => {
     // search through this.state.todos and find item that corresponds to clicked item
   };
 
