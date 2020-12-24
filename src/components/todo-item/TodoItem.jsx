@@ -6,7 +6,7 @@ const TodoItem = (props) => {
       <input
         className="form-check-input"
         type="checkbox"
-        onClick={props.onCheck}
+        onChange={props.onChecked}
       />
       <label className="form-check-label">{props.text}</label>
     </div>

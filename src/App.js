@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import TodoItem from "./components/todo-item/TodoItem";
 import TodoForm from "./components/todo-form/TodoForm";
 import AppHeader from "./components/app-header/AppHeader";
@@ -11,6 +11,10 @@ const App = (props) => {
     userInput: "",
     showAlert: false,
   });
+
+  useEffect(() => localStorage.setItem("todos", JSON.stringify(state.todos)), [
+    state.todos,
+  ]);
 
   const handleChange = (event) => {
     setState({
@@ -35,9 +39,7 @@ const App = (props) => {
     }
   };
 
-  const removeItem = (todo, id) => {
-    // search through this.state.todos and find item that corresponds to clicked item
-  };
+  const removeItem = (key) => {};
 
   return (
     <div className="container">
@@ -69,5 +71,4 @@ const App = (props) => {
 
 export default App;
 
-
-testing 123
+// JSON.parse(localStorage.getItem("todos")) ||
