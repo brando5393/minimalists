@@ -30,7 +30,7 @@ form {
 }
 
 img {
-  width: 150px;
+  width: 250px;
   height: auto;
   margin-bottom: 5px;
   /* border-radius: 50%; */
@@ -39,4 +39,40 @@ img {
 label {
   font-weight: bold;
   display: inline !important;
+}
+
+/* Additions for animations */
+@keyframes itemAdded {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes itemDeleted {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
+
+.todo-item {
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+}
+
+.todo-item-added {
+  animation-name: itemAdded;
+}
+
+.todo-item-deleted {
+  animation-name: itemDeleted;
 }

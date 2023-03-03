@@ -60,7 +60,7 @@ const App = (props) => {
     <div className="container">
       <div className="row">
         <div className="col col-lg-12">
-          <AppHeader image="https://image.flaticon.com/icons/svg/839/839746.svg" />
+          <AppHeader image="../logo.png" />
         </div>
       </div>
       <div className="row">
