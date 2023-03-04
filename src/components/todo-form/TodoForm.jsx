@@ -16,6 +16,8 @@ const TodoForm = (props) => {
             name="add-todo"
             className="form-control"
             id="add-todo"
+            minLength={1}
+            maxLength={255}
             value={value}
             onChange={handleChange}
           />
