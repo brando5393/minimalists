@@ -6,3 +6,4 @@ Minimalists is a simple, clean minimalist todo app. Its function is simple, Ente
 
 - No Passwords to Remember-All of your notes are saved in the browser, so there is no need to enter a login to access your to do list.
 - Minimalist Design-Other note taking apps can be bloated and make use of complex user interfaces. Minimalists strives to provide a aesthetically pleasing experience, while maintaining a simple intuitive interface so that you can stay focused on the task at hand.
+- Light/Dark Themes-Perfer things a little darker? No problem, just toggle the theme controller to work in your prefered envrionment.
