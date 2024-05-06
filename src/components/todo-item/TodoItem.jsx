@@ -1,4 +1,5 @@
 import React from "react";
+import Linkify from "react-linkify";
 
 const TodoItem = (props) => {
 
@@ -17,7 +18,7 @@ const TodoItem = (props) => {
         onChange={props.onChecked}
       />
       {/* The label that displays the todo text */}
-      <label className="form-check-label">{props.text}</label>
+      <label className="form-check-label"><Linkify>{props.text}</Linkify></label>
       {/* timestamp */}
       <span className="timestamp">{formatTimestamp(props.timestamp)}</span>
     </div>

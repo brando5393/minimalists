@@ -11,7 +11,7 @@ const AppHeader = (props) => {
       {/* Render the app title */}
       <h1>Welcome to Minimalists</h1>
       {/* Render the app description */}
-      <p className="lead">A simple todo list app</p>
+      <p className="lead">A simple to-do list app</p>
     </div>
   );
 };

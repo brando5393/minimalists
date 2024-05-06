@@ -12,7 +12,7 @@ const TodoForm = (props) => {
           {/* Input field to enter new todo */}
           <input
             type="text"
-            placeholder="Enter a todo"
+            placeholder="Enter a to-do"
             name="add-todo"
             className="form-control"
             id="add-todo"
