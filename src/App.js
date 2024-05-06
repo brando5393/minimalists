@@ -33,7 +33,7 @@ const App = (props) => {
       // Add new todo item to the list and reset the userInput state
       setState({
         ...state,
-        todos: [...state.todos, { id: uuidv4(), text: state.userInput }],
+        todos: [...state.todos, { id: uuidv4(), text: state.userInput, timestamp: Date.now() }],
         userInput: "",
         showAlert: false, // Reset the showAlert flag if it was previously set
       });
@@ -71,6 +71,7 @@ const App = (props) => {
             <TodoItem
               key={todo.id}
               text={todo.text}
+              timestamp={todo.timestamp}
               onChecked={() => removeItem(todo.id)}
             />
           ))}
