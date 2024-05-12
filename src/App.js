@@ -82,7 +82,7 @@ const App = (props) => {
           </div>
           {/* Display an alert message if the user submitted an empty todo item */}
           {state.showAlert && (
-            <div className="alert alert-danger">Please enter a todo item.</div>
+            <div className="alert alert-danger">Please enter a to-do item.</div>
           )}
         </div>
       </div>
