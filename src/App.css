@@ -84,6 +84,13 @@ label {
   /* Adjust color if needed */
 }
 
+.to-dosContainer {
+  max-height: 400px;
+  /* Set a fixed maximum height */
+  overflow-y: auto;
+  /* Enable vertical scrolling */
+}
+
 .todo-item {
   animation-duration: 0.5s;
   animation-fill-mode: both;

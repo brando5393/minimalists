@@ -66,15 +66,17 @@ const App = (props) => {
       <div className="row">
         <div className="col col-lg-12">
           <h3>My To-dos</h3>
-          {/* Map over the todo items and render a TodoItem component for each one */}
-          {state.todos.map((todo) => (
-            <TodoItem
-              key={todo.id}
-              text={todo.text}
-              timestamp={todo.timestamp}
-              onChecked={() => removeItem(todo.id)}
-            />
-          ))}
+          <div className="to-dosContainer">
+            {/* Map over the todo items and render a TodoItem component for each one */}
+            {state.todos.map((todo) => (
+              <TodoItem
+                key={todo.id}
+                text={todo.text}
+                timestamp={todo.timestamp}
+                onChecked={() => removeItem(todo.id)}
+              />
+            ))}
+          </div>
           {/* Display an alert message if the user submitted an empty todo item */}
           {state.showAlert && (
             <div className="alert alert-danger">Please enter a todo item.</div>
