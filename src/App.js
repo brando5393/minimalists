@@ -4,6 +4,7 @@ import TodoForm from "./components/todo-form/TodoForm";
 import AppHeader from "./components/app-header/AppHeader";
 import { v4 as uuidv4 } from "uuid";
 import "./App.css";
+import useScrollToBottom from "./hooks/useScrollToBottom";
 
 const App = (props) => {
   // Define initial state for the app
@@ -56,6 +57,8 @@ const App = (props) => {
     localStorage.setItem("todos", JSON.stringify(updatedTodos));
   };
 
+  const todoListContainerRef = useScrollToBottom(state.todos);
+
   return (
     <div className="container">
       <div className="row">
@@ -66,7 +69,7 @@ const App = (props) => {
       <div className="row">
         <div className="col col-lg-12">
           <h3>My To-dos</h3>
-          <div className="to-dosContainer">
+          <div ref={todoListContainerRef} className="to-dosContainer">
             {/* Map over the todo items and render a TodoItem component for each one */}
             {state.todos.map((todo) => (
               <TodoItem

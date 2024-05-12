@@ -48,31 +48,6 @@ label {
   display: inline !important;
 }
 
-/* Additions for animations */
-@keyframes itemAdded {
-  0% {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes itemDeleted {
-  0% {
-    opacity: 1;
-    transform: scale(1);
-  }
-
-  100% {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-}
-
 /* Adjustments for timestamp */
 .timestamp {
   display: block;
@@ -102,4 +77,29 @@ label {
 
 .todo-item-deleted {
   animation-name: itemDeleted;
+}
+
+/* Additions for animations */
+@keyframes itemAdded {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes itemDeleted {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
 }
