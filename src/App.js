@@ -19,8 +19,7 @@ const App = (props) => {
     userInput: "", // User input for new todo item
     showAlert: false, // Flag for displaying alert message when user submits an empty todo item
     storageError: false, // Flag for storage errors
-  });
-  // Save todos to localStorage whenever the todos state is updated
+  });  // Save todos to localStorage whenever the todos state is updated
   useEffect(() => {
     const saveSuccess = OfflineStorage.saveTodos(state.todos);
     if (!saveSuccess && state.todos.length > 0) {
@@ -34,7 +33,7 @@ const App = (props) => {
         storageError: false
       }));
     }
-  }, [state.todos]);
+  }, [state.todos, state.storageError]);
 
   // Check storage availability on mount
   useEffect(() => {
