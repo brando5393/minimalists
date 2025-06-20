@@ -1,5 +1,5 @@
 // Custom Service Worker for Offline Support
-const CACHE_NAME = 'minimalists-todo-v1';
+const CACHE_NAME = 'minimalists-todo-v1.1'; // Increment this for UI updates
 const urlsToCache = [
   '/',
   '/static/js/bundle.js',

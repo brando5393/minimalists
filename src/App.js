@@ -93,10 +93,9 @@ const App = (props) => {
         <div className="col col-lg-12">
           <AppHeader image="../logo.png" />
         </div>
-      </div>
-      <div className="row">
+      </div>      <div className="row">
         <div className="col col-lg-12">
-          <h3>My To-dos {!isOnline && <span className="offline-badge">📵 Offline</span>}</h3>
+          <h3>My To-dos</h3>
           <div ref={todoListContainerRef} className="to-dosContainer">
             {/* Map over the todo items and render a TodoItem component for each one */}
             {state.todos.map((todo) => (
